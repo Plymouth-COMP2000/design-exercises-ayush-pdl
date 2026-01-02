@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="colorPrimary">#5E4DB2</color>
+    <color name="colorPrimaryDark">#4A3C97</color>
+    <color name="colorAccent">#5E4DB2</color>
+
+    <!-- Background / surface -->
+    <color name="bg">#F7F4FF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#1F1A2A</color>
+    <color name="textSecondary">#6B647A</color>
+
+    <!-- Status colors (for reservation status) -->
+    <color name="statusConfirmed">#2E7D32</color>
+    <color name="statusPending">#F9A825</color>
+    <color name="statusCancelled">#C62828</color>
+
+    <!-- Outline / divider -->
+    <color name="outline">#DDD6F3</color>
+</resources>
