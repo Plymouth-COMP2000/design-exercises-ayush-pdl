@@ -68,6 +68,16 @@
                 app:cornerRadius="26dp"
                 app:backgroundTint="@color/colorPrimary"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textAllCaps="false"
+                app:cornerRadius="18dp"
+                app:backgroundTint="@color/colorPrimary" />
+
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

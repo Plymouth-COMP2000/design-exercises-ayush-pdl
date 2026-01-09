@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardGuestLogin"
+        android:id="@+id/cardLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_xl"
@@ -42,18 +42,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email or Username"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="@dimen/corner_md"
-                app:boxCornerRadiusTopEnd="@dimen/corner_md"
-                app:boxCornerRadiusBottomStart="@dimen/corner_md"
-                app:boxCornerRadiusBottomEnd="@dimen/corner_md">
+                android:hint="Username">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etGuestUsername"
+                    android:id="@+id/etUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -61,22 +56,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_md"
                 android:hint="Password"
-                app:boxBackgroundMode="outline"
-                app:endIconMode="password_toggle"
-                app:boxCornerRadiusTopStart="@dimen/corner_md"
-                app:boxCornerRadiusTopEnd="@dimen/corner_md"
-                app:boxCornerRadiusBottomStart="@dimen/corner_md"
-                app:boxCornerRadiusBottomEnd="@dimen/corner_md">
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etGuestPassword"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnGuestLogin"
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginTop="@dimen/space_lg"
@@ -94,8 +84,19 @@
                 android:textAllCaps="false"
                 app:cornerRadius="26dp"
                 app:backgroundTint="@color/colorPrimary"/>
-        </LinearLayout>
 
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <ProgressBar
+        android:id="@+id/progressLogin"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textAllCaps="false"
+        app:cornerRadius="22dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <LinearLayout
         android:id="@+id/rowButtons"
         android:layout_width="0dp"
@@ -53,7 +64,7 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGuestNotifSettings"
+        android:id="@+id/btnNotificationSettings"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_height"
         android:layout_marginTop="@dimen/space_md"
@@ -65,16 +76,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Optional: menu preview area (later you can bind with RecyclerView) -->
     <TextView
-        android:id="@+id/tvHint"
+        android:id="@+id/tvMenuHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_lg"
-        android:text="Menu items will appear here (SQLite/RecyclerView in implementation)."
-        android:textColor="@color/textSecondary"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/btnGuestNotifSettings"
+        android:text="Menu"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/textPrimary"
+        app:layout_constraintTop_toBottomOf="@id/btnNotificationSettings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGuestMenu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_md"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/space_lg"
+        app:layout_constraintTop_toBottomOf="@id/tvMenuHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

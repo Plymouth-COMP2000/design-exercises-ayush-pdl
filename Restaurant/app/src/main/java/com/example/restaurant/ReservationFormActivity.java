@@ -1,12 +1,14 @@
 package com.example.restaurant;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.restaurant.db.ReservationDao;
+import com.example.restaurant.db.EventDao;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class ReservationFormActivity extends AppCompatActivity {
 
@@ -15,18 +17,47 @@ public class ReservationFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_form);
 
-        EditText etDate = findViewById(R.id.etDate);
-        EditText etTime = findViewById(R.id.etTime);
-        EditText etPeople = findViewById(R.id.etPeople);
+        TextInputEditText etDate = findViewById(R.id.etDate);
+        TextInputEditText etTime = findViewById(R.id.etTime);
+        TextInputEditText etPeople = findViewById(R.id.etPeople);
+        MaterialButton btnSubmit = findViewById(R.id.btnSubmitReservation);
 
-        Button btn = findViewById(R.id.btnSubmitReservation);
+        ReservationDao dao = new ReservationDao(this);
 
-        btn.setOnClickListener(v -> {
-            if (TextUtils.isEmpty(etDate.getText()) || TextUtils.isEmpty(etTime.getText()) || TextUtils.isEmpty(etPeople.getText())) {
-                Toast.makeText(this, "Please fill all required fields (*)", Toast.LENGTH_SHORT).show();
+        btnSubmit.setOnClickListener(v -> {
+            String date = etDate.getText() == null ? "" : etDate.getText().toString().trim();
+            String time = etTime.getText() == null ? "" : etTime.getText().toString().trim();
+            String peopleText = etPeople.getText() == null ? "" : etPeople.getText().toString().trim();
+
+            if (date.isEmpty() || time.isEmpty() || peopleText.isEmpty()) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 return;
             }
-            Toast.makeText(this, "Reservation submitted (prototype)", Toast.LENGTH_SHORT).show();
+
+            int people;
+            try {
+                people = Integer.parseInt(peopleText);
+            } catch (Exception ex) {
+                Toast.makeText(this, "Enter a valid number of people", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (people <= 0) {
+                Toast.makeText(this, "People must be at least 1", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            dao.insertReservation(date, time, people, "Pending");
+            Toast.makeText(this, "Reservation created (Pending)", Toast.LENGTH_SHORT).show();
+
+            // Create an event for staff (stored locally)
+            new EventDao(this).insert(
+                    "staff",
+                    "NEW_BOOKING",
+                    "New booking received",
+                    "A guest created a reservation."
+            );
+
             finish();
         });
     }
