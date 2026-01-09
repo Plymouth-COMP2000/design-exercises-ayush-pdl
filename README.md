@@ -1,92 +1,42 @@
-Restaurant Management Mobile Application
+# 🍽️ Restaurant Management Mobile Application
 
-COMP2000 – Software Engineering 2 (Assessment 2)
+**Module:** COMP2000 – Software Engineering 2  
+**Assessment:** Coursework 2 – Implementation  
+**Student:** Ayush Paudel  
+**Programme:** BSc (Hons) Computer Science  
+**Institution:** University of Plymouth  
 
-Overview
+---
 
-This project is an Android-based Restaurant Management Mobile Application developed as part of the COMP2000 Software Engineering 2 module at the University of Plymouth.
+## 📱 Project Overview
 
-The application supports two user roles—Staff and Guest—and aims to improve restaurant operations and customer experience through role-based functionality, local data management, and notification support.
+This project is an **Android-based Restaurant Management Mobile Application** developed as part of the COMP2000 module.  
+The application supports **two user roles – Staff and Guest** – and aims to improve restaurant operations while enhancing the customer experience.
 
-Features
-Staff
+The system was implemented using **Android Studio with Java**, following **User-Centred Design (UCD)** principles and building directly on the designs produced in Coursework 1.
 
-Secure login via RESTful API
+---
 
-Menu management (Create, Read, Update, Delete)
+## 👥 User Roles & Features
 
-Reservation management (view, confirm, cancel)
+### 👨‍🍳 Staff
+- Secure login using a RESTful API  
+- Manage menu items (Create, Read, Update, Delete)  
+- View and manage guest reservations  
+- Confirm or cancel bookings  
+- Receive notifications for new reservations  
 
-Receive notifications for new reservations
+### 🧑 Guest
+- Secure login using a RESTful API  
+- Browse menu items  
+- Create and manage reservations  
+- View reservation status (Pending / Confirmed / Cancelled)  
+- Receive booking-related notifications  
 
-Guest
+---
 
-Secure login via RESTful API
+## 🏗️ System Architecture
 
-Browse menu items
-
-Create and manage reservations
-
-View reservation status
-
-Receive booking-related notifications
-
-Technical Details
-
-Platform: Android
-
-Language: Java
-
-IDE: Android Studio
-
-Authentication: RESTful API (centralised)
-
-Local Storage: SQLite
-
-Architecture:
-
-DAO pattern for database access
-
-Role-based navigation and control
-
-Event-driven local notifications
-
-Notifications
-
-The application uses Android notification channels to provide alerts for important events such as reservation creation and confirmation.
-Notification permissions are requested at runtime (Android 13+).
-
-Usability & Design
-
-Designed using User-Centred Design (UCD) principles
-
-Interfaces aligned with Material Design guidelines
-
-Role-specific dashboards to reduce cognitive load
-
-Tested with representative users for usability
-
-GitHub Repository
-
-This repository contains:
-
-Full Android Studio project
-
-Incremental commits showing development progress
-
-All source code required to build and run the application
-
-
-Academic Integrity & AI Declaration
-
-This project was completed in line with the module’s acceptable level of AI use (Assisted Work).
-Generative AI tools were used for:
-
-Planning and structuring
-
-Technical guidance and debugging support
-
-Language refinement
-
-All AI usage is declared in the submitted report.
-
+- **Authentication:** Centralised RESTful API  
+- **Local Storage:** SQLite database  
+- **
